@@ -1,0 +1,20 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img">
+  <defs>
+    <radialGradient id="dtc-storefront-rebuild-g3" cx="24%" cy="18%" r="85%">
+      <stop offset="0%" stop-color="#e86fa8" stop-opacity="0.55" />
+      <stop offset="45%" stop-color="#0d0d11" stop-opacity="1" />
+      <stop offset="100%" stop-color="#07070a" stop-opacity="1" />
+    </radialGradient>
+    <pattern id="grid-dtc-storefront-rebuild-g3" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e86fa8" stroke-opacity="0.06" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="#07070a" />
+  <rect width="1200" height="800" fill="url(#dtc-storefront-rebuild-g3)" />
+  <rect width="1200" height="800" fill="url(#grid-dtc-storefront-rebuild-g3)" />
+  <circle cx="1040" cy="150" r="220" fill="#e86fa8" fill-opacity="0.10" />
+  <text x="80" y="72" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="15" letter-spacing="3" fill="#e86fa8" fill-opacity="0.85">SAMPLE PLACEHOLDER</text>
+  <text font-family="system-ui, sans-serif" font-size="44" font-weight="300" fill="#f4f3f1" fill-opacity="0.92"><tspan x="80" y="372">Direct-to-Consumer</tspan><tspan x="80" y="428">Storefront Rebuild</tspan></text>
+  <text x="80" y="744" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" letter-spacing="2" fill="#8a8a94">DETAIL 03 — ILLUSTRATIVE PLACEHOLDER</text>
+  <rect x="0" y="0" width="1200" height="800" fill="none" stroke="#e86fa8" stroke-opacity="0.18" stroke-width="2" />
+</svg>

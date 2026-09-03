@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Color: surfaces ---- */
+  --color-void: #07070a;
+  --color-surface: #0d0d11;
+  --color-surface-2: #131318;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+
+  /* ---- Color: text ---- */
+  --color-text: #f4f3f1;
+  --color-text-muted: #8a8a94;
+  --color-text-faint: #56565f;
+
+  /* ---- Color: ambient / brand accents ---- */
+  --color-ember: #ff6b35;
+  --color-amber: #f0a24b;
+  --color-blush: #e86fa8;
+  --color-violet: #7c6bff;
+  --color-mint: #7fcfa6;
+
+  /* ---- Type scale (fluid, clamp-based) ---- */
+  --text-display: clamp(3rem, 8vw, 8.5rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.04em;
+
+  --text-h1: clamp(2.5rem, 5.5vw, 5rem);
+  --text-h1--line-height: 1;
+  --text-h1--letter-spacing: -0.03em;
+
+  --text-h2: clamp(2rem, 4vw, 3.5rem);
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.025em;
+
+  --text-h3: clamp(1.25rem, 2vw, 1.75rem);
+  --text-h3--line-height: 1.15;
+  --text-h3--letter-spacing: -0.015em;
+
+  --text-body: clamp(1rem, 1.1vw, 1.125rem);
+  --text-body--line-height: 1.6;
+
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.22em;
+
+  /* ---- Layout ---- */
+  --container-page: 90rem; /* 1440px */
+
+  /* Section vertical rhythm, consumed as py-section / gap-section / etc. */
+  --spacing-section: clamp(6rem, 12vw, 12rem);
+
+  /* ---- Radius ---- */
+  --radius-sm: 8px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* ---- Motion ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-expo: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+/*
+ * next/font previously injected --font-sora / --font-inter / --font-jetbrains-mono
+ * as CSS custom properties (via each font's `variable` option) onto <html>. Fonts are
+ * now self-hosted via @fontsource(-variable) (imported in main.tsx), so those same
+ * variable names are declared here instead — same names, same values downstream via
+ * @theme inline below, only the source of the @font-face rules changed.
+ */
+:root {
+  --font-sora: "Sora Variable", system-ui, sans-serif;
+  --font-inter: "Inter Variable", system-ui, sans-serif;
+  --font-jetbrains-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@theme inline {
+  --font-display: var(--font-sora);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    background-color: var(--color-void);
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-void);
+    color: var(--color-text);
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 300;
+  }
+
+  ::selection {
+    background-color: var(--color-ember);
+    color: var(--color-void);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ember);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes gradient-shimmer {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 200% 50%;
+  }
+}
