@@ -1,52 +1,58 @@
-import { motion } from "motion/react";
-import { Parallax } from "@/components/motion/Parallax";
-import { SplitText } from "@/components/motion/SplitText";
 import { Container } from "@/components/ui/Container";
-import { useReducedMotion } from "@/hooks/useReducedMotion";
-import { EASE } from "@/lib/motion";
-import type { Project } from "@/types";
+import { Project } from "@/types";
 
 interface ProjectHeroProps {
   project: Project;
 }
 
-/** Detail page hero: category/year, the title reveal, summary, and a clip-path-wiped cover image. */
 export function ProjectHero({ project }: ProjectHeroProps) {
-  const reducedMotion = useReducedMotion();
+  // Use gallery[0] for case study hero
+  const heroImage = project.gallery?.[0] || project.cover;
 
   return (
-    <header className="relative bg-void">
-      <Container className="flex flex-col gap-8 pt-[calc(var(--spacing-section)+3rem)]">
-        <div className="flex items-center gap-3 font-mono text-label uppercase tracking-[0.22em] text-text-faint">
-          <span>{project.category}</span>
-          <span aria-hidden="true">·</span>
-          <span>{project.year}</span>
+    <div className="bg-void py-12">
+      <Container>
+        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            
+            {/* LEFT SIDE - Image with Red Border */}
+            <div className="relative p-6 md:p-8">
+              <div className="border-4 border-red-600 rounded-xl overflow-hidden">
+                <img
+                  src={heroImage}
+                  alt={`${project.title} — cover`}
+                  className="w-full h-auto"
+                  loading="eager"
+                />
+              </div>
+            </div>
+
+            {/* RIGHT SIDE - Text Content */}
+            <div className="p-6 md:p-8 md:pr-10">
+              <h1 className="text-3xl md:text-4xl font-light text-gray-900">
+                {project.title}
+              </h1>
+              <p className="text-sm text-gray-500 mt-1">
+                {project.category} · {project.year}
+              </p>
+
+              <div className="mt-4 space-y-1 text-sm text-gray-600">
+                <p><span className="font-medium">Client:</span> {project.client}</p>
+                <p><span className="font-medium">Year:</span> {project.year}</p>
+                <p><span className="font-medium">Duration:</span> {project.duration}</p>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {project.services.slice(0, 3).map((service) => (
+                  <span key={service} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                    {service}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-
-        <h1 className="max-w-[900px] font-display text-display font-light leading-none text-text">
-          <SplitText text={project.title} as="span" className="block" />
-        </h1>
-
-        <p className="max-w-[620px] text-body text-text-muted">{project.summary}</p>
       </Container>
-
-      <Container className="pt-16">
-        <div className="relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-surface">
-          <Parallax offset={60} className="absolute inset-0">
-            <motion.img
-              src={project.cover}
-              alt={`${project.title} — cover`}
-              width={1200}
-              height={800}
-              className="h-full w-full object-cover"
-              initial={reducedMotion ? false : { clipPath: "inset(0 0 100% 0)" }}
-              whileInView={reducedMotion ? undefined : { clipPath: "inset(0 0 0% 0)" }}
-              viewport={{ once: true, margin: "-10% 0px" }}
-              transition={{ duration: 1.1, ease: EASE }}
-            />
-          </Parallax>
-        </div>
-      </Container>
-    </header>
+    </div>
   );
 }

@@ -13,8 +13,8 @@ export const siteConfig: SiteConfig = {
   name: "Reazix",
   tagline:
     "We don't just build websites. We design and engineer digital products that help businesses look premium, operate better, and grow.",
-  url: "https://reazix.com",
-  email: "hello@reazix.com",
+  url: "https://reazix.reazixtechnologies.workers.dev/",
+  email: "reazixtechnologies@gmail.com",
   phone: "+91 98765 43210",
   location: "India",
 };

@@ -5,7 +5,6 @@ import { WorkPreviewOutro } from "./WorkPreviewOutro";
 import { Container } from "@/components/ui/Container";
 import { PROJECTS, WORK_PREVIEW_ITEMS } from "@/content/projects";
 
-/** Homepage proof section: three curated case studies, full list lives on /work. */
 export function Work() {
   const featuredProjects = PROJECTS.filter((project) =>
     WORK_PREVIEW_ITEMS.some((item) => item.slug === project.slug),

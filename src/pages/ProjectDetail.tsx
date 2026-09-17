@@ -1,14 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 import { NotFound } from "./NotFound";
-import { Reveal } from "@/components/motion/Reveal";
 import { Container } from "@/components/ui/Container";
 import { NextProject } from "@/components/work/NextProject";
-import { ProjectGallery } from "@/components/work/ProjectGallery";
 import { ProjectHero } from "@/components/work/ProjectHero";
-import { ProjectMeta } from "@/components/work/ProjectMeta";
-import { ProjectResults } from "@/components/work/ProjectResults";
-import { PROJECTS, WORK_APPROACH_LABEL, WORK_CHALLENGE_LABEL, WORK_OUTCOME_LABEL } from "@/content/projects";
+import { PROJECTS } from "@/content/projects";
 import { siteConfig } from "@/content/site";
 
 export function ProjectDetail() {
@@ -26,51 +22,100 @@ export function ProjectDetail() {
         <meta name="description" content={project.summary} />
       </Helmet>
 
-      <article>
+      <article className="min-h-screen bg-void pt-20">
+        
+        {/* Hero - Image Left with Red Border */}
         <ProjectHero project={project} />
 
-        <Container className="grid grid-cols-1 gap-12 py-section lg:grid-cols-[3fr_9fr] lg:gap-16">
-          <ProjectMeta project={project} />
+        {/* White Document Content */}
+        <Container className="py-8">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+            
+            {/* Summary */}
+            <div className="mb-10">
+              <p className="text-gray-600 text-base leading-relaxed">
+                {project.summary}
+              </p>
+            </div>
 
-          <div className="flex flex-col gap-16">
-            <Reveal className="flex flex-col gap-4">
-              <span className="font-mono text-label uppercase tracking-[0.22em] text-text-faint">
-                {WORK_CHALLENGE_LABEL}
-              </span>
-              <p className="max-w-[680px] text-body text-text-muted">{project.challenge}</p>
-            </Reveal>
+            {/* 1. Challenge */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold text-gray-800 border-b-2 border-red-600 pb-2 mb-4">
+                1. The Challenge
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                {project.challenge}
+              </p>
+            </div>
 
-            <Reveal className="flex flex-col gap-4">
-              <span className="font-mono text-label uppercase tracking-[0.22em] text-text-faint">
-                {WORK_APPROACH_LABEL}
-              </span>
-              <p className="max-w-[680px] text-body text-text-muted">{project.approach}</p>
-            </Reveal>
+            {/* 2. Approach */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold text-gray-800 border-b-2 border-red-600 pb-2 mb-4">
+                2. Our Approach
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                {project.approach}
+              </p>
+            </div>
 
-            <Reveal className="flex flex-col gap-4">
-              <span className="font-mono text-label uppercase tracking-[0.22em] text-text-faint">
-                {WORK_OUTCOME_LABEL}
-              </span>
-              <p className="max-w-[680px] text-body text-text-muted">{project.outcome}</p>
-            </Reveal>
+            {/* 3. Outcome */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold text-gray-800 border-b-2 border-red-600 pb-2 mb-4">
+                3. The Outcome
+              </h2>
+              <p className="text-gray-600 leading-relaxed">
+                {project.outcome}
+              </p>
+            </div>
+
+            {/* 4. Services & Technology */}
+            <div className="mb-10">
+              <h2 className="text-xl font-semibold text-gray-800 border-b-2 border-red-600 pb-2 mb-4">
+                4. Services & Technology
+              </h2>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div>
+                  <h4 className="text-xs uppercase tracking-wider text-gray-400 font-medium mb-2">Services</h4>
+                  <ul className="list-disc list-inside text-gray-600 space-y-1">
+                    {project.services.map((service) => (
+                      <li key={service}>{service}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-xs uppercase tracking-wider text-gray-400 font-medium mb-2">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <span key={tech} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 5. Results */}
+            {project.results && project.results.length > 0 && (
+              <div>
+                <h2 className="text-xl font-semibold text-gray-800 border-b-2 border-red-600 pb-2 mb-4">
+                  5. Key Results
+                </h2>
+                <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+                  {project.results.map((result) => (
+                    <div key={result.label} className="text-center p-4 bg-gray-50 rounded-lg">
+                      <p className="text-2xl font-light text-gray-900">
+                        {result.value}{result.suffix}
+                      </p>
+                      <p className="text-xs text-gray-500 mt-1">{result.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
           </div>
         </Container>
-
-        <ProjectGallery project={project} />
-        <ProjectResults project={project} />
-
-        {project.testimonial ? (
-          <Container className="py-section">
-            <Reveal>
-              <blockquote className="mx-auto flex max-w-[720px] flex-col gap-6 border-l-2 border-ember pl-8">
-                <p className="font-display text-h3 font-light text-text">&ldquo;{project.testimonial.quote}&rdquo;</p>
-                <footer className="font-mono text-label uppercase tracking-[0.22em] text-text-faint">
-                  {project.testimonial.author} — {project.testimonial.role}
-                </footer>
-              </blockquote>
-            </Reveal>
-          </Container>
-        ) : null}
 
         <NextProject current={project} />
       </article>

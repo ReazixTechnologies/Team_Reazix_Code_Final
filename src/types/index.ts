@@ -43,7 +43,6 @@ export type WorkFilter = "Web" | "Product" | "Mobile" | "AI";
 
 export interface ProjectResult {
   label: string;
-  /** Numeric so <AnimatedCounter> can count up to it — pair with prefix/suffix for display (e.g. value 2.1, suffix "x"). */
   value: number;
   prefix?: string;
   suffix?: string;
@@ -60,13 +59,10 @@ export interface ProjectTestimonial {
 export interface Project {
   slug: string;
   title: string;
-  /** Sector/stage descriptor, not an invented brand name — e.g. "Series A SaaS company". */
   client: string;
   year: string;
   duration: string;
-  /** Display category shown in the list/detail UI, e.g. "SaaS Platform". */
   category: string;
-  /** Coarse bucket used by the Work filter row. */
   filter: WorkFilter;
   services: string[];
   summary: string;
@@ -77,7 +73,8 @@ export interface Project {
   stack: string[];
   accent: ServiceAccent;
   cover: string;
-  /** Additional detail-page images; cover is used separately for the hero/list preview. */
+  /** Live URL of the official product website — clicking the card image opens this. */
+  liveUrl?: string;
   gallery: string[];
   testimonial?: ProjectTestimonial;
 }
@@ -85,10 +82,8 @@ export interface Project {
 export interface PricingTier {
   id: string;
   name: string;
-  /** The one-sentence headline argument for this tier. */
   positioning: string;
   forWho: string;
-  /** null on tiers priced per-engagement (renders as "Custom"). */
   priceINR: number | null;
   priceUSD: number | null;
   timeline: string;
@@ -139,11 +134,9 @@ export interface Industry {
   id: string;
   name: string;
   accent: ServiceAccent;
-  /** The one-line "what we solve for them" argument shown as the detail headline. */
   headline: string;
   description: string;
   typicalWork: string[];
-  /** The sentence that makes the visitor feel understood — shown in the callout panel. */
   concern: string;
 }
 
@@ -153,7 +146,6 @@ export interface Testimonial {
   author: string;
   role: string;
   company: string;
-  /** Links to a case study in src/content/projects.ts, if this quote is tied to one. */
   projectSlug?: string;
   avatar?: string;
 }
@@ -167,6 +159,5 @@ export interface Stat {
 
 export interface ClientLogo {
   name: string;
-  /** Trusted, hand-authored inline <svg>...</svg> markup. Omit to fall back to a text wordmark. */
   svg?: string;
 }
