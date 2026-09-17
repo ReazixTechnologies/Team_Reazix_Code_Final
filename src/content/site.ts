@@ -29,11 +29,9 @@ export const navLinks: NavLink[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: "LinkedIn", href: "https://linkedin.com/company/reazix" },
-  { label: "X", href: "https://x.com/reazix" },
-  { label: "Instagram", href: "https://instagram.com/reazix" },
-  { label: "Dribbble", href: "https://dribbble.com/reazix" },
-  { label: "GitHub", href: "https://github.com/reazix" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/reazix-technology-1657b1423/" },
+  { label: "Instagram", href: "https://www.instagram.com/reazix.technologies?stkn=MTA0Znp0bTUzMGEyNA==" },
+  
 ];
 
 export const CLOSING_CTA_EYEBROW = "Next step";
