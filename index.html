@@ -2,18 +2,108 @@
 <html lang="en" style="background-color: #07070a">
   <head>
     <meta charset="UTF-8" />
-    <!--
-      This build is client-rendered (Vite SPA). Before launch, add a prerender
-      step (e.g. react-snap or vite-plugin-ssr) so search engines and social
-      crawlers get real HTML instead of an empty shell.
-    -->
-    <link rel="icon" href="src/assets/image.png" sizes="any" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses."
+    />
+
+    <meta
+      name="keywords"
+      content="Reazix Technology, web development, AI ML solutions, mobile applications, digital solutions, software development"
+    />
+
     <meta name="theme-color" content="#07070a" />
-    <title>Reazix</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.png" />
+
+    <!-- Page Title -->
+    <title>Reazix Technology | Web, AI & Digital Solutions</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://reazix.com/" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://reazix.com/" />
+    <meta property="og:site_name" content="Reazix Technology" />
+    <meta property="og:locale" content="en_IN" />
+
+    <meta
+      property="og:title"
+      content="Reazix Technology | Web, AI & Digital Solutions"
+    />
+
+    <meta
+      property="og:description"
+      content="Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses."
+    />
+
+    <meta
+      property="og:image"
+      content="https://reazix.com/favicon.png"
+    />
+
+    <!-- X / Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta
+      name="twitter:title"
+      content="Reazix Technology | Web, AI & Digital Solutions"
+    />
+
+    <meta
+      name="twitter:description"
+      content="Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses."
+    />
+
+    <meta
+      name="twitter:image"
+      content="https://reazix.com/favicon.png"
+    />
+
+    <!-- Organization Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://reazix.com/#organization",
+        "name": "Reazix Technology",
+        "url": "https://reazix.com/",
+        "logo": "https://reazix.com/favicon.png",
+        "description": "Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses.",
+        "email": "contact@reazix.com",
+        "telephone": "+91 95185 73085",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+91 95185 73085",
+            "contactType": "customer service",
+            "email": "contact@reazix.com"
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+91 98903 71852",
+            "contactType": "customer service"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/reazix.technologies"
+        ]
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
