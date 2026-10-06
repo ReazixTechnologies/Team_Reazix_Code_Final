@@ -2,100 +2,62 @@
 <html lang="en" style="background-color: #07070a">
   <head>
     <meta charset="UTF-8" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-
-    <!-- SEO -->
-    <meta
-      name="description"
-      content="Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses."
-    />
-
-    <meta
-      name="keywords"
-      content="Reazix Technology, web development, AI ML solutions, mobile applications, digital solutions, software development"
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#07070a" />
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.png" />
+    <!-- Icons (square, as Google requires for the search-result icon) -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Page Title -->
-    <title>Reazix Technology | Web, AI & Digital Solutions</title>
+    <!-- Per-page SEO tags. Filled in at build time from src/content/seo.ts
+         (see vite.config.ts) — do not hand-edit titles or canonicals here. -->
+    <!--seo:start-->
+    <!--seo:end-->
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://reazix.com/" />
-
-    <!-- Open Graph / Social Sharing -->
+    <!-- Site-wide social tags -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://reazix.com/" />
     <meta property="og:site_name" content="Reazix Technology" />
     <meta property="og:locale" content="en_IN" />
-
-    <meta
-      property="og:title"
-      content="Reazix Technology | Web, AI & Digital Solutions"
-    />
-
-    <meta
-      property="og:description"
-      content="Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses."
-    />
-
-    <meta
-      property="og:image"
-      content="https://reazix.com/favicon.png"
-    />
-
-    <!-- X / Twitter -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <meta
-      name="twitter:title"
-      content="Reazix Technology | Web, AI & Digital Solutions"
-    />
-
-    <meta
-      name="twitter:description"
-      content="Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses."
-    />
-
-    <meta
-      name="twitter:image"
-      content="https://reazix.com/favicon.png"
-    />
-
-    <!-- Organization Structured Data -->
+    <!-- Brand structured data: tells Google the site name and its short form -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://reazix.com/#organization",
-        "name": "Reazix Technology",
-        "url": "https://reazix.com/",
-        "logo": "https://reazix.com/favicon.png",
-        "description": "Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses.",
-        "email": "contact@reazix.com",
-        "telephone": "+91 95185 73085",
-        "contactPoint": [
+        "@graph": [
           {
-            "@type": "ContactPoint",
-            "telephone": "+91 95185 73085",
-            "contactType": "customer service",
-            "email": "contact@reazix.com"
+            "@type": "WebSite",
+            "@id": "https://reazix.com/#website",
+            "url": "https://reazix.com/",
+            "name": "Reazix Technology",
+            "alternateName": ["Reazix", "Reazix Technologies"],
+            "publisher": { "@id": "https://reazix.com/#organization" }
           },
           {
-            "@type": "ContactPoint",
-            "telephone": "+91 98903 71852",
-            "contactType": "customer service"
+            "@type": "Organization",
+            "@id": "https://reazix.com/#organization",
+            "name": "Reazix Technology",
+            "alternateName": ["Reazix", "Reazix Technologies"],
+            "url": "https://reazix.com/",
+            "logo": "https://reazix.com/icon-512.png",
+            "description": "Reazix Technology builds modern web applications, AI & ML solutions, mobile applications, and scalable digital solutions for businesses.",
+            "email": "contact@reazix.com",
+            "telephone": "+918275529298",
+            "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+918275529298",
+              "email": "contact@reazix.com",
+              "contactType": "customer service"
+            },
+            "sameAs": [
+              "https://www.instagram.com/reazix.technologies",
+              "https://www.linkedin.com/in/reazix-technology-1657b1423/"
+            ]
           }
-        ],
-        "sameAs": [
-          "https://www.instagram.com/reazix.technologies"
         ]
       }
     </script>

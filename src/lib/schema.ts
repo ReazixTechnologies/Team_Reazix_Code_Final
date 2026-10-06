@@ -9,7 +9,7 @@ export function buildOrganizationSchema() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/favicon.ico`,
+    logo: `${siteConfig.url}/icon-512.png`,
     sameAs: socialLinks.map((social) => social.href),
     contactPoint: {
       "@type": "ContactPoint",

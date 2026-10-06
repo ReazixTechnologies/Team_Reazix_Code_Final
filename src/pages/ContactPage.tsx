@@ -1,14 +1,10 @@
-import { Helmet } from "react-helmet-async";
+import { Seo } from "@/components/seo/Seo";
 import { Contact } from "@/components/sections/contact/Contact";
-import { siteConfig } from "@/content/site";
 
 export function ContactPage() {
   return (
     <>
-      <Helmet>
-        <title>{`Contact — ${siteConfig.name}`}</title>
-        <meta name="description" content="Get in touch with Reazix. Let's build something great together." />
-      </Helmet>
+      <Seo path="/contact" />
 
       <div className="min-h-screen bg-void pt-24">
         <Contact />

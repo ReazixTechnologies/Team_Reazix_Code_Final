@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { CursorGlow } from "@/components/fx/CursorGlow";
@@ -7,7 +6,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { SmoothScroll, useLenis } from "@/components/providers/SmoothScroll";
-import { siteConfig } from "@/content/site";
 
 /** How long to keep polling for a hash target before giving up — covers PageTransition's exit animation. */
 const HASH_TARGET_TIMEOUT_MS = 800;
@@ -84,12 +82,6 @@ function ScrollToTopOnNavigate() {
 export function App() {
   return (
     <>
-      <Helmet>
-        <html lang="en" />
-        <title>{`${siteConfig.name} — ${siteConfig.tagline}`}</title>
-        <meta name="description" content={siteConfig.tagline} />
-      </Helmet>
-
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ember focus:px-4 focus:py-2 focus:text-sm focus:text-void"

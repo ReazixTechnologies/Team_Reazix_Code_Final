@@ -2,6 +2,7 @@ import type { FooterColumn, NavLink, SocialLink } from "@/types";
 
 export interface SiteConfig {
   name: string;
+  shortName: string;
   tagline: string;
   url: string;
   email: string;
@@ -10,17 +11,18 @@ export interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: "Reazix",
+  name: "Reazix Technology",
+  shortName: "Reazix",
   tagline:
     "We don't just build websites. We design and engineer digital products that help businesses look premium, operate better, and grow.",
-  url: "https://reazix.reazixtechnologies.workers.dev/",
-  email: "reazixtechnologies@gmail.com",
-  phone: "+91 98765 43210",
+  url: "https://reazix.com",
+  email: "contact@reazix.com",
+  phone: "+91 82755 29298",
   location: "India",
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "/home" },
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Work", href: "/work" },
@@ -30,7 +32,7 @@ export const navLinks: NavLink[] = [
 
 export const socialLinks: SocialLink[] = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/reazix-technology-1657b1423/" },
-  { label: "Instagram", href: "https://www.instagram.com/reazix.technologies?stkn=MTA0Znp0bTUzMGEyNA==" },
+  { label: "Instagram", href: "https://www.instagram.com/reazix.technologies" },
   
 ];
 
@@ -53,7 +55,6 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "About", href: "/about" },
       { label: "Process", href: "/process" },
-      { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -74,7 +75,6 @@ export const footerColumns: FooterColumn[] = [
     title: "Company",
     links: [
       { label: "Work", href: "/work" },
-      { label: "Blog", href: "/blog" },
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
     ],

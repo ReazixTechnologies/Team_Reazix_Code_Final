@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Seo } from "@/components/seo/Seo";
 import { ServiceStack } from "@/components/sections/services/ServiceStack";
 import { ServicesOutro } from "@/components/sections/services/ServicesOutro";
 import { Container } from "@/components/ui/Container";
@@ -8,20 +8,12 @@ import {
   SERVICES_INTRO_EYEBROW,
   SERVICES_INTRO_HEADING_LINES,
 } from "@/content/services";
-import { siteConfig } from "@/content/site";
-
-const SERVICES_PAGE_TITLE = "Services";
-const SERVICES_PAGE_DESCRIPTION =
-  "Eight disciplines, one accountable partner — web, design, mobile, AI, custom software, e-commerce, growth, and 3D.";
 
 /** /services — the deep version of the homepage services band, for anyone who lands here directly. */
 export function ServicesPage() {
   return (
     <>
-      <Helmet>
-        <title>{`${SERVICES_PAGE_TITLE} — ${siteConfig.name}`}</title>
-        <meta name="description" content={SERVICES_PAGE_DESCRIPTION} />
-      </Helmet>
+      <Seo path="/services" />
 
       <section id="services" aria-labelledby="services-page-heading" className="relative bg-void">
         <Container className="flex flex-col gap-6 pb-12 pt-[calc(var(--spacing-section)+3rem)]">

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet-async";
+import { Seo } from "@/components/seo/Seo";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ProjectCard } from "@/components/sections/work/ProjectCard";
@@ -8,7 +8,6 @@ import {
   WORK_INDEX_EYEBROW,
   WORK_INDEX_HEADING,
 } from "@/content/projects";
-import { siteConfig } from "@/content/site";
 import { useState } from "react";
 
 // Category definitions with icons and filter logic
@@ -46,10 +45,7 @@ export function WorkIndex() {
 
   return (
     <>
-      <Helmet>
-        <title>{`${WORK_INDEX_HEADING} — ${siteConfig.name}`}</title>
-        <meta name="description" content={WORK_INDEX_DESCRIPTION} />
-      </Helmet>
+      <Seo path="/work" />
 
       <section className="relative bg-void min-h-screen pt-24">
         {/* HEADER */}

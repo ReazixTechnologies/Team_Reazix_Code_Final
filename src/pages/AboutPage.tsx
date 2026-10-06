@@ -1,27 +1,21 @@
-import { Helmet } from "react-helmet-async";
+import { Seo } from "@/components/seo/Seo";
 import { Reveal } from "@/components/motion/Reveal";
 import { Team } from "@/components/sections/team/Team";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import {
   ABOUT_INTRO_PARAGRAPHS,
-  ABOUT_PAGE_DESCRIPTION,
   ABOUT_PAGE_EYEBROW,
   ABOUT_PAGE_HEADING,
-  ABOUT_PAGE_TITLE,
   ABOUT_VALUES,
 } from "@/content/about";
-import { siteConfig } from "@/content/site";
 import { STAGGER } from "@/lib/motion";
 
 /** /about — the studio story, standing behind the "About Reazix" teaser on the homepage. */
 export function AboutPage() {
   return (
     <>
-      <Helmet>
-        <title>{`${ABOUT_PAGE_TITLE} — ${siteConfig.name}`}</title>
-        <meta name="description" content={ABOUT_PAGE_DESCRIPTION} />
-      </Helmet>
+      <Seo path="/about" />
 
       <section aria-labelledby="about-page-heading" className="relative bg-void">
         <Container className="flex flex-col gap-6 pb-12 pt-[calc(var(--spacing-section)+3rem)]">

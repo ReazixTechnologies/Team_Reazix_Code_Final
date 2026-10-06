@@ -5,7 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { NextProject } from "@/components/work/NextProject";
 import { ProjectHero } from "@/components/work/ProjectHero";
 import { PROJECTS } from "@/content/projects";
-import { siteConfig } from "@/content/site";
+import { Seo } from "@/components/seo/Seo";
+import { buildProjectBreadcrumbSchema } from "@/lib/schema";
 
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -17,9 +18,9 @@ export function ProjectDetail() {
 
   return (
     <>
+      <Seo path={`/work/${project.slug}`} />
       <Helmet>
-        <title>{`${project.title} — ${siteConfig.name}`}</title>
-        <meta name="description" content={project.summary} />
+        <script type="application/ld+json">{JSON.stringify(buildProjectBreadcrumbSchema(project))}</script>
       </Helmet>
 
       <article className="min-h-screen bg-void pt-20">

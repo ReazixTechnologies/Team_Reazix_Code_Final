@@ -1,9 +1,12 @@
+import { Seo } from "@/components/seo/Seo";
 import { Link } from "react-router-dom";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export function NotFound() {
   return (
+    <>
+    <Seo title="Page not found | Reazix Technology" description="This page does not exist." noindex />
     <Container className="flex min-h-screen flex-col items-center justify-center gap-6 text-center">
       <Eyebrow>404</Eyebrow>
       <h1 className="text-h1 text-text">Page not found</h1>
@@ -18,5 +21,6 @@ export function NotFound() {
         Back home
       </Link>
     </Container>
+    </>
   );
 }

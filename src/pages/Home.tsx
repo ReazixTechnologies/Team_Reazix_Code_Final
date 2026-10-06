@@ -12,11 +12,13 @@ import { Team } from "@/components/sections/team/Team";
 import { CredibilityBlock } from "@/components/sections/testimonials/CredibilityBlock";
 import { Testimonials } from "@/components/sections/testimonials/Testimonials";
 import { Work } from "@/components/sections/work/Work";
+import { Seo } from "@/components/seo/Seo";
 import { testimonials } from "@/content/testimonials";
 
 export function Home() {
   return (
     <>
+      <Seo path="/" />
       <Hero />
       <Manifesto />
       <Work />
