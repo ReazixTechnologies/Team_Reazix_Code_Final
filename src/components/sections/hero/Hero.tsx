@@ -10,16 +10,24 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 type HeroPhase = "idle" | "engaged";
 
+/**
+ * The "move to begin" intro plays once per visit. After the visitor has engaged,
+ * coming back to the homepage shows the hero straight away instead of hiding the
+ * headline again until the mouse moves.
+ */
+let hasEngagedThisVisit = false;
+
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
-  const [phase, setPhase] = useState<HeroPhase>("idle");
-  const engagedRef = useRef(false);
+  const [phase, setPhase] = useState<HeroPhase>(hasEngagedThisVisit ? "engaged" : "idle");
+  const engagedRef = useRef(hasEngagedThisVisit);
   const reducedMotion = useReducedMotion();
   const isCoarsePointer = useMediaQuery("(pointer: coarse)");
 
   const engage = useCallback(() => {
     if (engagedRef.current) return;
     engagedRef.current = true;
+    hasEngagedThisVisit = true;
     setPhase("engaged");
   }, []);
 

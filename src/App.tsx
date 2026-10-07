@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { CursorGlow } from "@/components/fx/CursorGlow";
 import { GrainOverlay } from "@/components/fx/GrainOverlay";
 import { CookieBanner } from "@/components/layout/CookieBanner";
@@ -95,9 +95,7 @@ export function App() {
         <GrainOverlay />
         <Navbar />
         <main id="main-content">
-          <PageTransition>
-            <Outlet />
-          </PageTransition>
+          <PageTransition />
         </main>
         <Footer />
         <CookieBanner />
