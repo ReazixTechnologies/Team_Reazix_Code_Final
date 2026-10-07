@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
-import { Project } from "@/types";
+import { WORK_IN_PRODUCTION_LABEL } from "@/content/projects";
+import type { Project } from "@/types";
 
 interface ProjectHeroProps {
   project: Project;
@@ -32,6 +33,11 @@ export function ProjectHero({ project }: ProjectHeroProps) {
               <h1 className="text-3xl md:text-4xl font-light text-gray-900">
                 {project.title}
               </h1>
+              {project.status === "in-production" ? (
+                <span className="mt-2 inline-block rounded-full bg-amber-100 px-3 py-1 text-xs font-medium uppercase tracking-wider text-amber-800">
+                  {WORK_IN_PRODUCTION_LABEL}
+                </span>
+              ) : null}
               <p className="text-sm text-gray-500 mt-1">
                 {project.category} · {project.year}
               </p>

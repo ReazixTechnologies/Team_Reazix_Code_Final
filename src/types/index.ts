@@ -76,6 +76,8 @@ export interface Project {
   /** Live URL of the official product website — clicking the card image opens this. */
   liveUrl?: string;
   gallery: string[];
+  /** "in-production" shows an "Under production" badge and hides outcome claims. */
+  status?: "live" | "in-production";
   testimonial?: ProjectTestimonial;
 }
 

@@ -178,8 +178,10 @@ export function ContactForm() {
       {/* Form Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="font-display text-xl font-light text-text">Send us a message</h3>
-          <p className="text-text-faint text-xs">Fill in the details below</p>
+          <h3 className="font-display text-xl font-normal text-text">Send us a message</h3>
+          <p className="mt-1 text-sm text-text-muted">
+            Fields marked <span className="text-ember">*</span> are required
+          </p>
         </div>
         <FormProgress
           steps={["Info", "Project", "Details"]}
@@ -187,16 +189,17 @@ export function ContactForm() {
         />
       </div>
 
-      <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+      <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-5">
         {/* Name + Company */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <FormField
-            label="Full Name *"
+            label="Full Name"
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
             placeholder="John Doe"
+            autoComplete="name"
             error={errors.name}
             required
           />
@@ -207,28 +210,33 @@ export function ContactForm() {
             value={formData.company}
             onChange={handleChange}
             placeholder="Your Company"
+            autoComplete="organization"
           />
         </div>
 
         {/* Email + Phone */}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <FormField
-            label="Email Address *"
+            label="Email Address"
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
             placeholder="hello@example.com"
+            autoComplete="email"
+            inputMode="email"
             error={errors.email}
             required
           />
           <FormField
-            label="Phone Number *"
+            label="Phone Number"
             type="tel"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="9876543210"
+            placeholder="10-digit mobile number"
+            autoComplete="tel"
+            inputMode="numeric"
             error={errors.phone}
             required
           />
@@ -248,7 +256,7 @@ export function ContactForm() {
           </div>
           {formData.service === "custom" && (
             <FormField
-              label="Specify Your Service *"
+              label="Specify Your Service"
               type="text"
               name="customService"
               value={formData.customService}
@@ -274,7 +282,7 @@ export function ContactForm() {
           </div>
           {formData.budget === "custom" && (
             <FormField
-              label="Specify Your Budget *"
+              label="Specify Your Budget"
               type="text"
               name="customBudget"
               value={formData.customBudget}
@@ -288,7 +296,7 @@ export function ContactForm() {
 
         {/* Message */}
         <FormField
-          label="Tell us about your project *"
+          label="Tell us about your project"
           type="textarea"
           name="message"
           value={formData.message}
@@ -304,17 +312,17 @@ export function ContactForm() {
 
         {/* Status Messages */}
         {status === "error" && (
-          <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm text-center">
+          <div role="alert" className="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-300 text-sm font-medium text-center">
             ✗ Something went wrong. Please try again or email us directly.
           </div>
         )}
 
         {/* Trust Badge */}
-        <div className="flex items-center justify-center gap-4 text-[10px] text-text-faint pt-2">
+        <div className="flex items-center justify-center gap-4 text-xs text-text-muted pt-2">
           <span>🔒 Secure</span>
-          <span className="w-px h-3 bg-line/30" />
+          <span className="w-px h-3 bg-white/20" />
           <span>24hr Response</span>
-          <span className="w-px h-3 bg-line/30" />
+          <span className="w-px h-3 bg-white/20" />
           <span>No Spam</span>
         </div>
       </form>

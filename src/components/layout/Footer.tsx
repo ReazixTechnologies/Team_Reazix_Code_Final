@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLenis } from "@/components/providers/SmoothScroll";
 import { Container } from "@/components/ui/Container";
 import { footerColumns, siteConfig, socialLinks } from "@/content/site";
+import { openConsentSettings } from "@/lib/consent";
 import logo from "@/assets/logo.png";
 
 function isHashLink(href: string) {
@@ -92,6 +93,14 @@ export function Footer() {
         <p className="font-mono text-label text-text-faint">
           © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </p>
+        <button
+          type="button"
+          onClick={openConsentSettings}
+          data-cursor="hover"
+          className="font-mono text-label uppercase tracking-[0.18em] text-text-faint transition-colors duration-300 hover:text-text"
+        >
+          Cookie settings
+        </button>
         <ul className="flex items-center gap-6">
           {socialLinks.map((social) => (
             <li key={social.label}>

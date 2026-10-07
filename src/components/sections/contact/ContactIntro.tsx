@@ -10,7 +10,7 @@ export function ContactIntro() {
         something great <br />
         together.
       </h2>
-      <p className="mt-4 text-text-muted text-sm max-w-sm leading-relaxed">
+      <p className="mt-4 text-text/75 text-base max-w-sm leading-relaxed">
         Tell us about your project, and we'll get back to you within 24 hours.
       </p>
 
@@ -21,9 +21,23 @@ export function ContactIntro() {
             ✉
           </div>
           <div>
-            <p className="text-[10px] text-text-faint font-mono uppercase tracking-wider">Email</p>
-            <a href={`mailto:${siteConfig.email}`} className="text-text hover:text-ember transition-colors text-sm">
+            <p className="text-[11px] font-medium text-text-muted font-mono uppercase tracking-wider">Email</p>
+            <a href={`mailto:${siteConfig.email}`} className="text-text font-medium hover:text-ember transition-colors text-base">
               {siteConfig.email}
+            </a>
+          </div>
+        </div>
+        <div className="flex items-start gap-4 group">
+          <div className="w-10 h-10 rounded-full bg-ember/10 flex items-center justify-center text-ember text-sm flex-shrink-0 mt-0.5 group-hover:bg-ember/20 transition-colors">
+            ☎
+          </div>
+          <div>
+            <p className="text-[11px] font-medium text-text-muted font-mono uppercase tracking-wider">Phone</p>
+            <a
+              href={`tel:${siteConfig.phone.replace(/\s+/g, "")}`}
+              className="text-text font-medium hover:text-ember transition-colors text-base"
+            >
+              {siteConfig.phone}
             </a>
           </div>
         </div>
@@ -32,8 +46,8 @@ export function ContactIntro() {
             📍
           </div>
           <div>
-            <p className="text-[10px] text-text-faint font-mono uppercase tracking-wider">Location</p>
-            <span className="text-text text-sm">{siteConfig.location}</span>
+            <p className="text-[11px] font-medium text-text-muted font-mono uppercase tracking-wider">Location</p>
+            <span className="text-text font-medium text-base">{siteConfig.location}</span>
           </div>
         </div>
         <div className="flex items-start gap-4 group">
@@ -41,14 +55,14 @@ export function ContactIntro() {
             🕐
           </div>
           <div>
-            <p className="text-[10px] text-text-faint font-mono uppercase tracking-wider">Response Time</p>
-            <span className="text-text text-sm">Within 24 hours</span>
+            <p className="text-[11px] font-medium text-text-muted font-mono uppercase tracking-wider">Response Time</p>
+            <span className="text-text font-medium text-base">Within 24 hours</span>
           </div>
         </div>
       </div>
 
       {/* Trust Badge */}
-      <div className="mt-8 flex items-center gap-3 text-xs text-text-faint border-t border-line/30 pt-6">
+      <div className="mt-8 flex items-center gap-3 text-sm text-text-muted border-t border-line-strong pt-6">
         <span className="text-lg">🔒</span>
         <span>Your information is safe with us.</span>
       </div>

@@ -69,6 +69,81 @@ export const PROJECTS: Project[] = [
     liveUrl: "https://deroworld.com/",
     gallery: [],
   },
+  {
+    slug: "laptop-shop-crm",
+    title: "Laptop Shop CRM",
+    client: "NEXA Computers — Laptop Sales & Service",
+    year: "2026",
+    duration: "In progress",
+    category: "CRM",
+    filter: "Product",
+    status: "in-production",
+    services: ["Product Strategy", "UI/UX Design", "Custom Software Development"],
+    summary:
+      "A CRM dashboard for a laptop sales and service shop, built to keep customers, sales and service work in one place. Currently under production.",
+    challenge:
+      "A laptop shop handles sales, repairs and follow-ups every day, and tracking them across notebooks and spreadsheets makes it easy to lose a customer or miss a job.",
+    approach:
+      "We are building a single web dashboard the shop team can open on any device, with the day-to-day records organised around the customer rather than around separate registers.",
+    outcome:
+      "This project is under production. The dashboard is being built and tested with the client, and this page will be updated with results once it is in daily use.",
+    results: [],
+    stack: ["Web Dashboard", "Responsive Design", "Vercel"],
+    accent: "amber",
+    cover: "/images/work/laptop-shop-crm-cover.jpg",
+    liveUrl: "https://laptop-shop-crm.vercel.app",
+    gallery: [],
+  },
+  {
+    slug: "cherry-dental-studio",
+    title: "Cherry Dental Studio",
+    client: "Cherry Dental Studio — Dental Clinic, Siliguri",
+    year: "2026",
+    duration: "In progress",
+    category: "Web Application",
+    filter: "Web",
+    status: "in-production",
+    services: ["UI/UX Design", "Web Development", "SEO & Growth"],
+    summary:
+      "A patient-focused website for Cherry Dental Studio in Siliguri, covering treatments such as root canal treatment, dental crowns and tooth extraction. Currently under production.",
+    challenge:
+      "Patients look for a dentist online before they call. The clinic needed a clear, trustworthy website that explains its treatments in simple language and makes it easy to get in touch.",
+    approach:
+      "We are designing a clean, mobile-first site built around what patients ask first: symptoms, treatments, the doctor, reviews and how to reach the clinic.",
+    outcome:
+      "This project is under production. The preview site is live for client review, and this page will be updated once the final version launches.",
+    results: [],
+    stack: ["Responsive Design", "SEO", "Vercel"],
+    accent: "blush",
+    cover: "/images/work/cherry-dental-studio-cover.jpg",
+    liveUrl: "https://cherry-dental-studio.vercel.app/",
+    gallery: [],
+  },
+  {
+    slug: "eminence-power-public-school",
+    title: "Eminence Power Public School",
+    client: "Eminence Power Public School — Nandurbar, Maharashtra",
+    year: "2026",
+    duration: "In progress",
+    category: "Web Application",
+    filter: "Web",
+    status: "in-production",
+    services: ["UI/UX Design", "Web Development"],
+    summary:
+      "A website for Eminence Power Public School in Nandurbar, presenting its Pre-Primary to Class 5 programme, activity-based teaching and small class sizes to parents. Currently under production.",
+    challenge:
+      "Parents choosing a school want to understand its teaching approach, classes and environment quickly. The school needed an online presence that answers those questions clearly.",
+    approach:
+      "We are building an accessible, easy-to-navigate site that leads with what makes the school different — activity-based learning and personal attention — and guides parents towards admission enquiries.",
+    outcome:
+      "This project is under production. The preview site is live for client review, and this page will be updated once the final version launches.",
+    results: [],
+    stack: ["Responsive Design", "Accessibility", "Vercel"],
+    accent: "mint",
+    cover: "/images/work/eminence-power-public-school-cover.jpg",
+    liveUrl: "https://epps-eight.vercel.app",
+    gallery: [],
+  },
 ];
 
 export const WORK_FILTERS: WorkFilter[] = ["Product"];
@@ -98,12 +173,12 @@ export const WORK_FILTER_DEFAULT: WorkFilter = "Product";
 export const WORK_ROW_ARIA_PREFIX = "View case study:";
 export const WORK_OUTRO_HEADING = "That's the studio's current case-study set.";
 export const WORK_OUTRO_DESCRIPTION =
-  "Every one of these is sample data until real client work replaces it — ask us for references in the meantime.";
+  "Some projects are still under production — ask us for a walkthrough or client references.";
 export const WORK_OUTRO_CTA_LABEL = "View all work";
 export const WORK_INDEX_EYEBROW = "Work";
 export const WORK_INDEX_HEADING = "Selected engagements";
 export const WORK_INDEX_DESCRIPTION =
-  "A studio this new leads with how it works, not a wall of logos. The case studies below are illustrative until real ones replace them.";
+  "Real client projects we have designed and built. Projects marked Under production are still being built with the client.";
 
 export const WORK_META_LABELS = {
   client: "Client type",
@@ -118,4 +193,5 @@ export const WORK_OUTCOME_LABEL = "The outcome";
 export const WORK_RESULTS_LABEL = "The results";
 export const WORK_NEXT_PROJECT_LABEL = "Next case study";
 export const WORK_CURSOR_VIEW_LABEL = "View";
+export const WORK_IN_PRODUCTION_LABEL = "Under production";
 export const WORK_EMPTY_FILTER_MESSAGE = "No case studies in this category yet.";

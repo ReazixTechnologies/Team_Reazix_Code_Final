@@ -13,13 +13,13 @@ export function FormProgress({ steps, currentStep }: FormProgressProps) {
           <div
             className={cn(
               "w-2 h-2 rounded-full transition-all duration-300",
-              index <= currentStep ? "bg-ember" : "bg-line/30"
+              index <= currentStep ? "bg-ember" : "bg-white/25"
             )}
           />
           <span
             className={cn(
-              "text-[9px] font-mono uppercase tracking-wider transition-colors duration-300 hidden sm:block",
-              index <= currentStep ? "text-text" : "text-text-faint"
+              "text-[11px] font-mono font-medium uppercase tracking-wider transition-colors duration-300 hidden sm:block",
+              index <= currentStep ? "text-text" : "text-text-muted"
             )}
           >
             {step}

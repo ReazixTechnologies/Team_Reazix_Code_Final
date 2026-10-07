@@ -13,18 +13,23 @@ export function SubmitButton({ status }: SubmitButtonProps) {
       type="submit"
       disabled={isSending || isSuccess}
       className={cn(
-        "w-full py-4 rounded-xl font-mono text-sm uppercase tracking-wider",
+        "w-full py-4 rounded-xl font-mono text-sm font-semibold uppercase tracking-wider",
         "transition-all duration-300 flex items-center justify-center gap-3",
         "relative overflow-hidden group",
         isSuccess
           ? "bg-green-500 text-white"
           : "bg-ember text-void hover:bg-ember/80 hover:shadow-lg hover:shadow-ember/20",
-        (isSending || isSuccess) && "opacity-50 cursor-not-allowed"
+        isSending && "opacity-70 cursor-wait",
+        isSuccess && "cursor-default"
       )}
     >
       {isSending ? (
         <>
-          <span className="animate-spin">⏳</span> Sending...
+          <span
+            aria-hidden="true"
+            className="h-4 w-4 animate-spin rounded-full border-2 border-void/30 border-t-void"
+          />
+          Sending...
         </>
       ) : isSuccess ? (
         "✓ Message Sent!"

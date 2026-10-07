@@ -14,7 +14,7 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
     heading: "Information we collect",
     body: [
       "When you submit our contact form, we collect the information you provide directly: your name, email address, company (if given), and details about your project, budget and timeline.",
-      "We also collect standard technical data automatically — pages visited, referring source, browser and device type — through privacy-respecting analytics, to understand how visitors use this site.",
+      "If you accept analytics cookies in our cookie banner, we may also collect standard technical data — pages visited, referring source, browser and device type — to understand how visitors use this site. If you decline, this data is not collected.",
     ],
   },
   {
@@ -27,7 +27,8 @@ export const PRIVACY_SECTIONS: LegalSection[] = [
   {
     heading: "Cookies",
     body: [
-      "This site may use a small number of essential and analytics cookies to remember preferences and measure traffic. You can disable cookies in your browser settings; the site will still function, though some conveniences may be lost.",
+      "This site stores a small amount of essential data in your browser to remember your preferences, such as your currency choice and your cookie choice. This is needed for the site to work and does not track you.",
+      "Analytics cookies are used only if you click Accept on the cookie banner. If you click Decline, no analytics cookies are set. You can change your choice at any time using the “Cookie settings” link in the footer of every page.",
     ],
   },
   {

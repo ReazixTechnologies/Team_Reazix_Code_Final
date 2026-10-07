@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import { CursorGlow } from "@/components/fx/CursorGlow";
 import { GrainOverlay } from "@/components/fx/GrainOverlay";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { PageTransition } from "@/components/layout/PageTransition";
@@ -99,6 +100,7 @@ export function App() {
           </PageTransition>
         </main>
         <Footer />
+        <CookieBanner />
       </SmoothScroll>
     </>
   );

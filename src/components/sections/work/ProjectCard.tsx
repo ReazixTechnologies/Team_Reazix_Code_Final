@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { WORK_CURSOR_VIEW_LABEL, WORK_ROW_ARIA_PREFIX } from "@/content/projects";
+import { WORK_CURSOR_VIEW_LABEL, WORK_IN_PRODUCTION_LABEL, WORK_ROW_ARIA_PREFIX } from "@/content/projects";
 import { cn } from "@/lib/utils";
 import type { Project, ServiceAccent } from "@/types";
 
@@ -42,6 +42,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             loading="lazy"
             decoding="async"
           />
+{project.status === "in-production" ? (
+            <span className="absolute top-3 left-3 rounded-full bg-amber/90 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-void">
+              {WORK_IN_PRODUCTION_LABEL}
+            </span>
+          ) : null}
           <span className="absolute top-3 right-3 rounded-full bg-void/70 backdrop-blur-sm px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-text-muted border border-line/40">
             Visit ↗
           </span>
@@ -52,7 +57,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           aria-label={`${WORK_ROW_ARIA_PREFIX} ${project.title}`}
           data-cursor="hover"
           data-cursor-text={WORK_CURSOR_VIEW_LABEL}
-          className="block aspect-video overflow-hidden bg-surface-2"
+          className="block relative aspect-video overflow-hidden bg-surface-2"
         >
           <img
             src={project.cover}
@@ -61,6 +66,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
             loading="lazy"
             decoding="async"
           />
+          {project.status === "in-production" ? (
+            <span className="absolute top-3 left-3 rounded-full bg-amber/90 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-void">
+              {WORK_IN_PRODUCTION_LABEL}
+            </span>
+          ) : null}
         </Link>
       )}
 

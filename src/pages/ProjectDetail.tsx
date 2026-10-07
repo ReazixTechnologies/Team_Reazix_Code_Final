@@ -62,7 +62,7 @@ export function ProjectDetail() {
             {/* 3. Outcome */}
             <div className="mb-10">
               <h2 className="text-xl font-semibold text-gray-800 border-b-2 border-red-600 pb-2 mb-4">
-                3. The Outcome
+                {project.status === "in-production" ? "3. Current Status" : "3. The Outcome"}
               </h2>
               <p className="text-gray-600 leading-relaxed">
                 {project.outcome}
